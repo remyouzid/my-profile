@@ -3,5 +3,6 @@ applications.csv
 letters/
 suivi_candidatures.xlsx
 cv.pdf
+cv.txt
 __pycache__/
 .venv/

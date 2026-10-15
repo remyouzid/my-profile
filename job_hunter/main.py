@@ -18,7 +18,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from src import ai, scrapers
+from src import ai, scrapers, web_search
 from src.emailer import send_email
 from src.tracker import Tracker
 
@@ -31,7 +31,13 @@ def load_config() -> dict:
 
 
 def cv_text() -> str:
-    return (BASE / "cv.txt").read_text(encoding="utf-8")
+    txt, pdf = BASE / "cv.txt", BASE / "cv.pdf"
+    if txt.exists():
+        return txt.read_text(encoding="utf-8")
+    if pdf.exists():
+        from pypdf import PdfReader
+        return "\n".join(page.extract_text() or "" for page in PdfReader(pdf).pages)
+    sys.exit("CV introuvable : place ton CV dans job_hunter/cv.pdf (ou cv.txt).")
 
 
 def cv_pdf() -> Path | None:
@@ -54,9 +60,12 @@ def evaluate(job: dict, tracker: Tracker, cfg: dict, cv: str, min_score: int) ->
 def cmd_search(args, cfg, tracker):
     cv = cv_text()
     found: list[dict] = []
-    for role in cfg["search"]["roles"]:
-        for location in cfg["search"]["locations"][:1]:
-            print(f"Recherche : {role} / {location}")
+    if "web" in args.sources:
+        found += web_search.search_web(cfg["profile"], cfg["search"], max_searches=args.web_searches)
+    if "boards" in args.sources:
+        location = cfg["search"]["locations"][0]
+        for role in cfg["search"]["roles"]:
+            print(f"Sites d'annonces : {role} / {location}")
             found += scrapers.scrape_wttj(role, location, max_pages=args.pages)
             found += scrapers.scrape_indeed(role, location, max_pages=args.pages)
             found += scrapers.scrape_france_travail(role)
@@ -166,6 +175,10 @@ def main():
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("search")
+    p.add_argument("--sources", nargs="+", choices=["web", "boards"], default=["web", "boards"],
+                   help="web = recherche web Claude (sites carrières, JobTeaser, LinkedIn...), "
+                        "boards = scrapers WTTJ / Indeed / France Travail")
+    p.add_argument("--web-searches", type=int, default=8, help="recherches web max par lot")
     p.add_argument("--pages", type=int, default=2)
     p.add_argument("--limit", type=int, default=60, help="nb max d'offres évaluées par Claude")
     p.add_argument("--min-score", type=int, default=65)

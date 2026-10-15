@@ -2,37 +2,45 @@
   "profile": {
     "name": "Rémy Ouzid",
     "email": "remy95460@gmail.com",
-    "phone": "+33 X XX XX XX XX",
-    "school": "EMLV Business School",
-    "level": "Bachelor Finance",
-    "linkedin": "https://www.linkedin.com/in/remy-ouzid-638119255/",
-    "availability": "Janvier 2027",
+    "school": "EMLV × ESILV Paris La Défense (double diplôme)",
+    "level": "Master Finance de Marchés",
+    "linkedin": "https://www.linkedin.com/in/remyouzid",
+    "availability": "janvier 2027",
     "duration": "6 mois",
-    "languages": ["Français (natif)", "Anglais (courant)"],
+    "languages": ["Français (natif)", "Anglais B2", "Espagnol B1"],
     "skills": [
       "Analyse financière",
-      "Modélisation financière",
-      "Excel avancé",
-      "PowerPoint",
-      "Bloomberg (bases)",
-      "VBA (notions)"
+      "Valorisation d'actifs",
+      "Gestion de portefeuilles",
+      "Économétrie financière",
+      "Marchés dérivés",
+      "Fixed Income",
+      "Bloomberg Terminal (BMC)",
+      "Excel avancé (VBA, Power Query)",
+      "Power BI",
+      "Python (notions)"
     ]
   },
   "search": {
     "roles": [
-      "stage finance de marché",
-      "stage banque d'investissement",
-      "stage audit financier",
-      "stage M&A",
-      "stage contrôle de gestion",
-      "stage trésorerie",
-      "stage asset management",
-      "stage sales trading"
+      "stage finance de marchés (sales, trading, structuration)",
+      "stage risques de marché / risk management",
+      "stage gestion d'actifs / gestion de portefeuille / asset management",
+      "stage analyste quantitatif / middle office / produits dérivés",
+      "stage Debt Capital Markets / Fixed Income"
     ],
     "locations": ["Paris", "La Défense", "Île-de-France"],
-    "contract_types": ["Internship", "Stage"],
-    "min_duration_months": 4,
-    "sectors": ["Finance", "Banque", "Assurance", "Conseil"]
+    "target_companies": [
+      "BNP Paribas CIB", "Société Générale CIB", "Crédit Agricole CIB", "Natixis CIB",
+      "La Banque Postale", "CIC Market Solutions", "HSBC France", "Deutsche Bank Paris",
+      "J.P. Morgan Paris", "Goldman Sachs Paris", "Morgan Stanley Paris", "BofA Securities Paris",
+      "Citi Paris", "Barclays Paris", "UBS France", "SMBC Paris", "MUFG Paris", "Mizuho Paris",
+      "Rothschild & Co", "Lazard Frères Gestion", "Oddo BHF", "Kepler Cheuvreux",
+      "Amundi", "AXA Investment Managers", "BNP Paribas Asset Management", "Natixis Investment Managers",
+      "Candriam", "Carmignac", "Tikehau Capital", "Edmond de Rothschild", "La Française",
+      "Ostrum Asset Management", "LBP AM", "Groupama AM", "Mirova",
+      "Banque de France", "AMF", "Euronext", "Bloomberg Paris", "Murex"
+    ]
   },
   "smtp": {
     "host": "smtp.gmail.com",

@@ -21,8 +21,11 @@ FRANCE_TRAVAIL_CLIENT_ID=...                 # optionnel, francetravail.io
 FRANCE_TRAVAIL_CLIENT_SECRET=...
 ```
 
-Puis complète `cv.txt` (les `X` et `[...]`), ajuste `config.json` (postes, villes, disponibilité),
-et dépose ton CV en PDF dans `job_hunter/cv.pdf` pour qu'il soit joint aux e-mails.
+Dépose ton CV en PDF dans `job_hunter/cv.pdf` : l'agent le lit pour noter les offres et écrire
+les lettres, et le joint aux e-mails. Ajuste `config.json` (postes, villes, banques ciblées).
+
+`cv.pdf`, `.env`, le suivi et les lettres sont exclus de git : tes données personnelles ne
+partent jamais sur GitHub.
 
 ## Utilisation quotidienne
 
@@ -45,7 +48,8 @@ python main.py set "BNP" entretien      # statuts : entretien, refus, offre...
 
 | Étape | Détail |
 |---|---|
-| Recherche | Welcome to the Jungle, Indeed, France Travail (API officielle). LinkedIn n'est pas scrapé : ajoute ces offres avec `add`. |
+| Recherche web | Claude cherche sur le web entier : sites carrières des ~40 banques et sociétés de gestion de `target_companies`, JobTeaser, LinkedIn, eFinancialCareers, iAgora, Jooble, Hellowork, Apec… puis une recherche par type de poste. |
+| Sites d'annonces | En complément : Welcome to the Jungle, Indeed, France Travail (API officielle). `--sources web` pour n'utiliser que la recherche web. |
 | Tri | Claude note chaque offre selon ton profil ; sous 65, elle est écartée. |
 | Lettre | Une lettre unique par offre, fondée uniquement sur ton CV (rien d'inventé). |
 | Envoi | Par e-mail quand l'annonce donne un contact. Sinon l'offre passe en `a_postuler_manuellement` avec le lien et la lettre prête. |
@@ -55,6 +59,8 @@ python main.py set "BNP" entretien      # statuts : entretien, refus, offre...
 
 - La plupart des grandes banques passent par des formulaires (Workday, Taleo) : l'outil prépare
   la lettre, mais la soumission reste manuelle. C'est là que Claude dans Chrome peut t'aider.
+- Coût : la recherche web complète (~12 lots de 8 recherches) coûte de l'ordre de quelques
+  dollars de crédits API par passage. Une fois par jour ou tous les deux jours suffit.
 - Les scrapers WTTJ/Indeed dépendent du HTML des sites : s'ils renvoient 0 résultat, le site a
   changé ou bloque les requêtes. France Travail (API officielle) est la source la plus fiable.
 - Garde la confirmation avant envoi : des dizaines d'e-mails génériques envoyés sans relecture
