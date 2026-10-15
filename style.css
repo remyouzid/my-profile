@@ -96,10 +96,109 @@ color: black;
 
 #introduction p {
 	margin-bottom: 40px;
-
 }
 
+/* Internship card */
+.card-internship {
+	border-top: 4px solid #7ECE90;
+	position: relative;
+}
 
+.internship-badge {
+	display: inline-block;
+	background-color: #7ECE90;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 4px 12px;
+	border-radius: 20px;
+	margin-bottom: 12px;
+}
+
+.internship-tagline {
+	color: #575F7D;
+	font-style: italic;
+	margin-bottom: 24px;
+}
+
+.internship-desc {
+	margin: 20px 0 24px;
+	text-align: left;
+	line-height: 1.7;
+}
+
+.skills-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
+	margin: 20px 0;
+}
+
+.skill-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	width: 110px;
+}
+
+.skill-item i {
+	font-size: 28px;
+	color: #6B72E1;
+}
+
+.skill-item span {
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	color: #575F7D;
+}
+
+.btn-green {
+	background-color: #7ECE90;
+	color: white;
+	padding: 15px 20px;
+	border-radius: 4px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.btn-green:hover {
+	background-color: #5cb870;
+	color: white;
+}
+
+/* Education */
+.education-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	text-align: left;
+}
+
+.education-item i {
+	font-size: 28px;
+	color: #6B72E1;
+	margin-top: 4px;
+}
+
+.education-item strong {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	color: #575F7D;
+}
+
+.education-item p {
+	margin: 4px 0 0;
+	font-size: 15px;
+}
 
 
 
