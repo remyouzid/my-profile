@@ -1,0 +1,44 @@
+{
+  "profile": {
+    "name": "Rémy Ouzid",
+    "email": "remy95460@gmail.com",
+    "phone": "+33 X XX XX XX XX",
+    "school": "EMLV Business School",
+    "level": "Bachelor Finance",
+    "linkedin": "https://www.linkedin.com/in/remy-ouzid-638119255/",
+    "availability": "Janvier 2027",
+    "duration": "6 mois",
+    "languages": ["Français (natif)", "Anglais (courant)"],
+    "skills": [
+      "Analyse financière",
+      "Modélisation financière",
+      "Excel avancé",
+      "PowerPoint",
+      "Bloomberg (bases)",
+      "VBA (notions)"
+    ]
+  },
+  "search": {
+    "roles": [
+      "stage finance de marché",
+      "stage banque d'investissement",
+      "stage audit financier",
+      "stage M&A",
+      "stage contrôle de gestion",
+      "stage trésorerie",
+      "stage asset management",
+      "stage sales trading"
+    ],
+    "locations": ["Paris", "La Défense", "Île-de-France"],
+    "contract_types": ["Internship", "Stage"],
+    "min_duration_months": 4,
+    "sectors": ["Finance", "Banque", "Assurance", "Conseil"]
+  },
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "user": "remy95460@gmail.com",
+    "password_env": "GMAIL_APP_PASSWORD"
+  },
+  "follow_up_days": 10
+}

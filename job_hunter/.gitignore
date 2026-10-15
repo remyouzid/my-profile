@@ -1,0 +1,7 @@
+.env
+applications.csv
+letters/
+suivi_candidatures.xlsx
+cv.pdf
+__pycache__/
+.venv/
